@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Upload Job</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center;">
+  <ion-card>
+    <ion-card-header>
+      <ion-input required type="name" placeholder="Name" [(ngModel)]="name" name="name"></ion-input>
+      <ion-input required type="email" placeholder="Email" [(ngModel)]="email" name="email"></ion-input>
+      <ion-input required type="title" placeholder="Title Job" [(ngModel)]="title" name="title"></ion-input>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-select placeholder="Full Time / Part Time" required type="text" [(ngModel)]="work" name="work">
+        <ion-select-option value="full">Full Time</ion-select-option>
+        <ion-select-option value="part">Part Time</ion-select-option>
+       </ion-select>
+    </ion-card-content>
+
+    <ion-card-content>
+        <ion-input required type="tel" [(ngModel)]="phone" placeholder="Phone" name="phone"></ion-input>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-tabs>
+        <!-- Tab bar -->
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="tab3">
+            <ion-text>Description</ion-text>
+          </ion-tab-button>
+          <ion-tab-button tab="tab4">
+            <ion-text>Skil Set</ion-text>
+          </ion-tab-button>
+          <ion-tab-button tab="tab5">
+            <ion-text>Activity</ion-text>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-card-content>
+
+    <br>
+    <br>
+
+    <ion-button expand="block" shape="rounded" (click)="uploadjob()">Upload Job</ion-button>
+
+  </ion-card>
+
+</ion-content>

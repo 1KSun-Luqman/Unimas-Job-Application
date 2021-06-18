@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>View Profile </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <div class="ion-text-center">
+  <ion-text >All your information will be saved</ion-text>
+  </div>
+  <br> 
+  <div class="ion-text-center" style="opacity: 50%;">
+    <ion-text >Below are your details </ion-text>
+  </div>
+  <br>
+  <ion-item>
+    <ion-label position="fixed">Name:</ion-label>
+    <ion-text disabled="true" type="text">{{user?.userName}}</ion-text>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label position="fixed">Email:</ion-label>
+    <ion-input disabled="true" type="text">{{user?.userEmail}}</ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label position="fixed">Gender</ion-label>
+    <ion-input disabled="true" type="text">{{user?.userGender}}</ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label  position="fixed">Campus</ion-label>
+    <ion-input disabled="true" type="text">{{user?.userCampus}}</ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label position="fixed">Year</ion-label>
+    <ion-input disabled="true" type="text">{{user?.userYear}}</ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label position="fixed">Faculty</ion-label>
+    <ion-input disabled="true" type="text">{{user?.userFaculty}}</ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block" (click)="updateprofile()">Next</ion-button>
+
+</ion-content>
