@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Jobs</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center;">
+  <ion-card>
+    <ion-card-header>
+      <ion-text required type="title" name="title">Research Assistant</ion-text>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-text required type="title" name="title">Full Time</ion-text>
+    </ion-card-content>
+
+      <ion-segment (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="descriptionJob">
+          <ion-label>Description</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="skillset">
+          <ion-label>Skill Set</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="activity">
+          <ion-label>Activity</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      
+      <ion-card-content>
+        <ion-card *ngIf="selectedSegment == 'descriptionJob' ">
+          <ion-card-header>
+            <ion-item>
+              <ion-label position="static">Overview</ion-label>
+              <br>
+              <ion-text type="description" name="description">123</ion-text>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
+
+        <ion-card *ngIf="selectedSegment == 'skillset' ">
+          <ion-card-header>
+            <ion-item>
+              <ion-label position="static">Skill Set</ion-label>
+              <ion-text type="skillset"  name="skillset">123</ion-text>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
+
+        <ion-card *ngIf="selectedSegment == 'activity' ">
+          <ion-card-header>
+            <ion-item>
+              <ion-label position="static">Activity</ion-label>
+              <br><br>
+              <ion-text type="activity" name="activity">123</ion-text>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
+
+      </ion-card-content>
+
+        <ion-segment-button value="student">
+          <ion-label>Student</ion-label>
+          <ion-item>{{user?.userName}}</ion-item>
+        </ion-segment-button>
+
+    <ion-button expand="block" shape="rounded" color="success">Completed Job</ion-button>
+
+  </ion-card>
+
+</ion-content>

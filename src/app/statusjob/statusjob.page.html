@@ -9,4 +9,46 @@
 
 <ion-content>
 
+  <ion-card-header>
+    <ion-card-title>My Jobs Status</ion-card-title>
+  </ion-card-header>
+
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="onStanby">
+      <ion-label>On Stanby</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="inProgress">
+      <ion-label>In Progress</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="complete">
+      <ion-label>Complete</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+    <ion-card *ngIf="selectedSegment == 'onStanby' ">
+      <ion-card-header>
+        <ion-list button (click)="openModal1()">
+        <ion-item type="text">Research Center1 {{job?.userTitle}}</ion-item>
+        <ion-item type="text">Research Center2 {{job?.userTitle}}</ion-item>
+        </ion-list>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card *ngIf="selectedSegment == 'inProgress' ">
+      <ion-card-header>
+        <ion-list button (click)="openModal2()">
+        <ion-item type="text">Research Center1 {{job?.userTitle}}</ion-item>
+        <ion-item type="text">Research Center2 {{job?.userTitle}}</ion-item>
+        </ion-list>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card *ngIf="selectedSegment == 'complete' ">
+      <ion-card-header>
+        <ion-list button (click)="openModal3()">
+        <ion-item type="text">Research Center1 {{job?.userTitle}}</ion-item>
+        </ion-list>
+      </ion-card-header>
+    </ion-card>
+  
 </ion-content>

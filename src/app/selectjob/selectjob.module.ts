@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SelectjobPageRoutingModule } from './selectjob-routing.module';
 
 import { SelectjobPage } from './selectjob.page';
+import { CartModalPage } from '../cart-modal/cart-modal.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { SelectjobPage } from './selectjob.page';
     IonicModule,
     SelectjobPageRoutingModule
   ],
-  declarations: [SelectjobPage]
+  declarations: [SelectjobPage, CartModalPage],
+  entryComponents: [CartModalPage]
 })
 export class SelectjobPageModule {}

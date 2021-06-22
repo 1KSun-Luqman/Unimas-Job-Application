@@ -1,5 +1,6 @@
 export interface User 
 {
+    uid: any;
     userId: string;
     userName: string;
     userEmail: string;
@@ -10,4 +11,5 @@ export interface User
     userYear: string;
     userFaculty: string;
     createAt: number;
+    role: string[];
 }

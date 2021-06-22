@@ -19,6 +19,7 @@ export class CreateprofilePage implements OnInit {
   campus: string;
   year: string;
   faculty: string;
+  role: string;
 
   constructor
   (
@@ -55,7 +56,8 @@ export class CreateprofilePage implements OnInit {
           'userCampus': this.campus,
           'userYear': this.year,
           'userFaculty': this.faculty,
-          'createAt': Date.now()
+          'createAt': Date.now(),
+          'role': 'user'
         })
         .then(()=>{
           loading.dismiss();

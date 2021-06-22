@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Update Job</ion-title>
+    <ion-title>Skill Job</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,32 +18,18 @@
   </div>
   <br>
   <ion-list>
-    <ion-radio-group>
-      <ion-item>
-        <ion-label>Cord</ion-label>
-        <ion-radio value="cord"></ion-radio>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label>Duesenberg</ion-label>
-        <ion-radio value="duesenberg"></ion-radio>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label>Hudson</ion-label>
-        <ion-radio value="hudson"></ion-radio>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label>Packard</ion-label>
-        <ion-radio value="packard"></ion-radio>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label>Studebaker</ion-label>
-        <ion-radio value="studebaker"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
+    <ion-item>
+      <ion-label>Research Assistant</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="skillset1" value="Research Assistant"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Translator</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="skillset2" value="Translator"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Virual Assistant</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="skillset3" value="Virtual Assistant"></ion-checkbox>
+    </ion-item>
   </ion-list>
 
   <ion-button expand="block" (click)="update()">Create Job</ion-button>

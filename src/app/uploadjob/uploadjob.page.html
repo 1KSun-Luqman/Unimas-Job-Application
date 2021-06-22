@@ -17,8 +17,8 @@
   
     <ion-card-content>
       <ion-select placeholder="Full Time / Part Time" required type="text" [(ngModel)]="work" name="work">
-        <ion-select-option value="full">Full Time</ion-select-option>
-        <ion-select-option value="part">Part Time</ion-select-option>
+        <ion-select-option value="Full Time">Full Time</ion-select-option>
+        <ion-select-option value="Part Time">Part Time</ion-select-option>
        </ion-select>
     </ion-card-content>
 
@@ -26,25 +26,45 @@
         <ion-input required type="tel" [(ngModel)]="phone" placeholder="Phone" name="phone"></ion-input>
     </ion-card-content>
 
-    <ion-card-content>
-      <ion-tabs>
-        <!-- Tab bar -->
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="tab3">
-            <ion-text>Description</ion-text>
-          </ion-tab-button>
-          <ion-tab-button tab="tab4">
-            <ion-text>Skil Set</ion-text>
-          </ion-tab-button>
-          <ion-tab-button tab="tab5">
-            <ion-text>Activity</ion-text>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-card-content>
+    
+      <ion-segment (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="descriptionJob">
+          <ion-label>Description</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="skillset">
+          <ion-label>Skill Set</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="activity">
+          <ion-label>Activity</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      
+        <ion-card *ngIf="selectedSegment == 'descriptionJob' ">
+          <ion-card-header>
+            <ion-item>
+              <ion-label position="floating">Overview</ion-label>
+              <ion-textarea type="description" placeholder="Please describe the job here" [(ngModel)]="description" name="description"></ion-textarea>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
 
-    <br>
-    <br>
+        <ion-card *ngIf="selectedSegment == 'skillset' ">
+          <ion-card-header>
+            <ion-item>
+              <ion-label position="floating">Skill Set</ion-label>
+              <ion-textarea type="skillset" [(ngModel)]="skillset" name="skillset"></ion-textarea>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
+
+        <ion-card *ngIf="selectedSegment == 'activity' ">
+          <ion-card-header>
+            <ion-item>
+              <ion-label position="floating">Activity</ion-label>
+              <ion-textarea type="activity" placeholder="Please describe the activity here" [(ngModel)]="activity" name="activity"></ion-textarea>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
 
     <ion-button expand="block" shape="rounded" (click)="uploadjob()">Upload Job</ion-button>
 

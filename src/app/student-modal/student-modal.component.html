@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Jobs</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-list>
+    <ion-item>
+      <ion-searchbar placeholder="Find Students"></ion-searchbar>
+    </ion-item>
+    <ion-item>
+         <ion-label type="text" >{{user?.userName}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="acceptstudent()">Accept All</ion-button>
+
+</ion-header>
+
+
+  

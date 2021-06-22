@@ -17,17 +17,26 @@ export class UploadjobPage implements OnInit
   email: string;
   title: string;
   phone: string;
+  work: string;
+  selectedSegment: string = 'descriptionJob';
+  description: string;
+  skillset: string;
+  activity: string;
 
   constructor
   (
     private router: Router, 
-    private auth: AuthService, 
     private afs: AngularFirestore,
     private loadingCtrl: LoadingController,
     private toastr: ToastController
   ) { }
 
   ngOnInit() {
+  }
+
+  segmentChanged(event:any){
+    console.log(event.target.value);
+    this.selectedSegment=event.target.value
   }
 
   async uploadjob(){
@@ -44,7 +53,11 @@ export class UploadjobPage implements OnInit
         'userName': this.name,
         'userEmail': this.email,
         'userPhone': this.phone,
+        'userWork':this.work,
         'userTitle': this.title,
+        'userDescription': this.description,
+        'userSkill': this.skillset,
+        'userActvitity': this.activity,
         'editAt': Date.now()
       })
       .then(()=>{
@@ -60,13 +73,14 @@ export class UploadjobPage implements OnInit
      this.toast('Please fill the form!','warning');
    }
   }
+  
   async toast(message,status)
   {
     const toast = await this.toastr.create({
       message:message,
       color: status,
       position: 'top',
-      duration: 2000
+      duration: 3000
     });
 
     toast.present();

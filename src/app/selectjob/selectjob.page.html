@@ -9,10 +9,11 @@
 
 <ion-content>
   <ion-searchbar placeholder="Find Jobs"></ion-searchbar>
-    <ion-list>
-      <ion-item>Amsterdam</ion-item>
-      <ion-item>Bogota</ion-item>
-      <ion-item>Buenos Aires</ion-item>
+    
+     <ion-list button (click)="openModal()">
+        <ion-item type="text">Research Center1 </ion-item>
+        <ion-item type="text">Research Center2 </ion-item>
+        <ion-item type="text">Research Center3 </ion-item>
     </ion-list>
     <ion-button expand="block" (click)="upload()">SELECT JOB DESCRIPTION TO UPLOAD</ion-button>
 </ion-content>

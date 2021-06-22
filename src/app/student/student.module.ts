@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { StudentPageRoutingModule } from './student-routing.module';
 
 import { StudentPage } from './student.page';
+import { DepositModalComponent } from '../deposit-modal/deposit-modal.component';
+import { ProgressModalComponent } from '../progress-modal/progress-modal.component';
+import { CompleteModalComponent } from '../complete-modal/complete-modal.component';
 
 @NgModule({
   imports: [
@@ -15,6 +18,7 @@ import { StudentPage } from './student.page';
     IonicModule,
     StudentPageRoutingModule
   ],
-  declarations: [StudentPage]
+  declarations: [StudentPage, DepositModalComponent, ProgressModalComponent, CompleteModalComponent],
+  entryComponents: [DepositModalComponent, ProgressModalComponent, CompleteModalComponent]
 })
 export class StudentPageModule {}

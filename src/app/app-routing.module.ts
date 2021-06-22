@@ -15,6 +15,8 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'student',
@@ -28,6 +30,8 @@ const routes: Routes = [
   {
     path: 'createprofile',
     loadChildren: () => import('./createprofile/createprofile.module').then( m => m.CreateprofilePageModule),
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'updateprofile',
@@ -36,19 +40,26 @@ const routes: Routes = [
   },
   {
     path: 'skillprofile',
-    loadChildren: () => import('./skillprofile/skillprofile.module').then( m => m.SkillprofilePageModule)
+    loadChildren: () => import('./skillprofile/skillprofile.module').then( m => m.SkillprofilePageModule),
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'applyjob',
-    loadChildren: () => import('./applyjob/applyjob.module').then( m => m.ApplyjobPageModule)
+    loadChildren: () => import('./applyjob/applyjob.module').then( m => m.ApplyjobPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'viewjob',
-    loadChildren: () => import('./viewjob/viewjob.module').then( m => m.ViewjobPageModule)
+    loadChildren: () => import('./viewjob/viewjob.module').then( m => m.ViewjobPageModule),
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'menu',
-    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule),
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'tab1',
@@ -69,23 +80,31 @@ const routes: Routes = [
   },
   {
     path: 'selectjob',
-    loadChildren: () => import('./selectjob/selectjob.module').then( m => m.SelectjobPageModule)
+    loadChildren: () => import('./selectjob/selectjob.module').then( m => m.SelectjobPageModule),
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'updatejob',
-    loadChildren: () => import('./updatejob/updatejob.module').then( m => m.UpdatejobPageModule)
+    loadChildren: () => import('./updatejob/updatejob.module').then( m => m.UpdatejobPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'uploadjob',
-    loadChildren: () => import('./uploadjob/uploadjob.module').then( m => m.UploadjobPageModule)
+    loadChildren: () => import('./uploadjob/uploadjob.module').then( m => m.UploadjobPageModule),
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'statusjob',
-    loadChildren: () => import('./statusjob/statusjob.module').then( m => m.StatusjobPageModule)
+    loadChildren: () => import('./statusjob/statusjob.module').then( m => m.StatusjobPageModule),
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'logout',
-    loadChildren: () => import('./logout/logout.module').then( m => m.LogoutPageModule)
+    loadChildren: () => import('./logout/logout.module').then( m => m.LogoutPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'tab3',
@@ -98,6 +117,11 @@ const routes: Routes = [
   {
     path: 'tab5',
     loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule)
+  },
+  {
+    path: 'cart-modal',
+    loadChildren: () => import('./cart-modal/cart-modal.module').then( m => m.CartModalPageModule),
+    canActivate: [AuthGuard]
   },
   
 ];

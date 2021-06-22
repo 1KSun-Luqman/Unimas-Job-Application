@@ -8,6 +8,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,7 @@ export class AuthService {
 
   user$: Observable<User>;
   user: User;
-
+  
   constructor
   (
     private afs: AngularFirestore, 
@@ -38,8 +39,11 @@ export class AuthService {
       
       })
     )
-  }
 
+  }
+  
+
+  
   async signIn(email: string,password: string)
   {
     const loading = await this.LoadingCtrl.create({

@@ -12,24 +12,52 @@
     <ion-card-header>
       <ion-card-title>My Status</ion-card-title>
     </ion-card-header>
+
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="inProgress">
+        <ion-label>In Progress</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="accepted">
+        <ion-label>Accepted</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="rejected">
+        <ion-label>Rejected</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+      <ion-card *ngIf="selectedSegment == 'inProgress' ">
+        <ion-card-header>
+          <ion-item>
+            <ion-list button (click)="openModal1()">
+              <ion-item type="text">Research Center1 {{job?.userTitle}}</ion-item>
+              <ion-item type="text">Research Center2 {{job?.userTitle}}</ion-item>
+              </ion-list>
+          </ion-item>
+        </ion-card-header>
+      </ion-card>
   
-    <ion-card-content>
-      <ion-tabs>
-        <!-- Tab bar -->
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="tab">
-            <ion-text>In Progress</ion-text>
-          </ion-tab-button>
-          <ion-tab-button tab="tab1">
-            <ion-text>Accepted</ion-text>
-          </ion-tab-button>
-          <ion-tab-button tab="tab2">
-            <ion-text>Rejected</ion-text>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-card-content>
+      <ion-card *ngIf="selectedSegment == 'accepted' ">
+        <ion-card-header>
+          <ion-item>
+            <ion-list button (click)="openModal2()">
+            <ion-item type="text">Research Center1 {{job?.userTitle}}</ion-item>
+            <ion-item type="text">Research Center2 {{job?.userTitle}}</ion-item>
+        </ion-list>
+          </ion-item>
+        </ion-card-header>
+      </ion-card>
+  
+      <ion-card *ngIf="selectedSegment == 'rejected' ">
+        <ion-card-header>
+          <ion-item>
+            <ion-list button (click)="openModal3()">
+              <ion-item type="text">Research Center1 {{job?.userTitle}}</ion-item>
+              <ion-item type="text">Research Center2 {{job?.userTitle}}</ion-item>
+              </ion-list>
+          </ion-item>
+        </ion-card-header>
+      </ion-card>
+      
   </ion-card>
   
-
 </ion-content>

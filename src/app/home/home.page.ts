@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToastController, LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private toastr: ToastController, private loadingCtrl: LoadingController, private router: Router) {}
+
+  ngOnInit() {
+  }
 
 }
